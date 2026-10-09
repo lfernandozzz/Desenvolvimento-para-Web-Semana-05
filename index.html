@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 05 – APIs e Assincronismo</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+    section { border: 1px solid #ddd; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+    h2 { margin-top: 0; }
+    input, button { padding: .45rem .7rem; font-size: 1rem; }
+    button:disabled { opacity: .6; cursor: not-allowed; }
+    .status { min-height: 1.5em; margin: .75rem 0 0; }
+    .status.erro { color: #b91c1c; }
+    .status.vazio { color: #92400e; }
+    dt { font-weight: bold; margin-top: .5rem; }
+    dd { margin: 0; }
+    #pokemon-resultado img { width: 120px; height: 120px; image-rendering: pixelated; }
+  </style>
+</head>
+<body>
+  <h1>Semana 05 – Objetos, Dados e Assincronismo</h1>
+  <p>A Parte 1 (pedidos) é exibida no Console (F12).</p>
+
+  <!-- Parte 2: Buscador de CEP -->
+  <section>
+    <h2>Buscador de CEP</h2>
+    <form id="form-cep" novalidate>
+      <label for="cep">CEP:</label>
+      <input type="text" id="cep" placeholder="65010-000" inputmode="numeric" autocomplete="off">
+      <button type="submit" id="btn-cep">Buscar</button>
+    </form>
+    <p id="status-cep" class="status" role="status" aria-live="polite"></p>
+    <dl id="resultado-cep"></dl>
+
+    <h3>Histórico</h3>
+    <ul id="historico-cep"></ul>
+  </section>
+
+  <!-- Parte 3: Mini Pokédex -->
+  <section>
+    <h2>Mini Pokédex</h2>
+    <form id="form-pokemon" novalidate>
+      <label for="pokemon">Nome do Pokémon:</label>
+      <input type="text" id="pokemon" placeholder="pikachu" autocomplete="off">
+      <button type="submit" id="btn-pokemon">Buscar</button>
+    </form>
+    <p id="status-pokemon" class="status" role="status" aria-live="polite"></p>
+    <div id="pokemon-resultado"></div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
